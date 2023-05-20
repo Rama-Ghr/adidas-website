@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Kufam:wght@700&family=Tajawal:wght@400;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Tajawal', sans-serif;
+  background: #d9e2ec;
+}
+h1{
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  color: #f0f4f8;
+}
+h3{
+  font-size: 2rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;/* IDEA: 2rem=20px .. 1rem*10= x px */
+  color: #d5d5d5;
+}
+p{
+  font-size: 1.6rem;
+  color: #345375;
+  line-height: 2;
+}
+.nav-container {
+ background: #334e68;
+ color: #f0f4f8;
+}
+nav {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1366px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 10vh;/* IDEA: means that it will takes 10% of the screen */
+  font-size: 1.6rem; /* IDEA: =16px */
+}
+nav .logo{
+  padding-top :20px; /* IDEA: i added this from my self cause the logo is not in the center like the list beside it */
+  font-family: 'Kufam', sans-serif;
+  font-weight: bold;
+  color: #f0f4f8;
+  flex: 2; /* IDEA: means that logo will take 2 parts of the space in the nav */
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  flex: 1;/* IDEA: means that list (ul) will take 1 parts of the space in the nav */
+
+}
+nav ul li a {
+  text-decoration:none;
+  color: #f0f4f8;
+}
+nav ul li a:hover {
+  color: #27ab83;
+}
+.hero-container {
+  height: 90vh; /* IDEA: means that it will takes 90% of the screen */
+ position: relative; /* IDEA: parent postion should be relative always */
+}
+.hero-container::after {
+  content: '';
+  z-index: -1; /* IDEA: to make image under the content not over it */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image:linear-gradient(90deg,rgba(51, 78, 104, 0.2) 0%, rgba(20, 63, 92, 0.8) 20%), url('images/delivery.jpg');
+  background-size: cover;
+  animation: heroBg 5s ease-in; /* IDEA: i call the animation function (heroBg) i created down there: here */
+}
+.content {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1366px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* IDEA: make content start from the begining of the flex direction and width */
+  height: 90vh;
+}
+.content span {
+  color: #27ab83;
+}
+.btn{
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 0.75rem 3rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  background:#27ab83;
+}
+.btn a {
+  color:#243b53;
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+.btn:hover {
+  background: #2fca9c;
+  transform: scale(0.98); /* IDEA: makes button smaller by the (defined scale) when we hover over it */
+}
+.qulities {
+  width: 90%;
+  margin: 4rem auto;
+  max-width: 1366px;
+  height: 100%;/* IDEA: in case the screen size change it will not lose the content inside */
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align:center;
+}
+.qulities h2 {
+  font-size: 3rem;
+}
+.qulities-container{
+  display: flex;
+  justify-content: space-between;
+  grid-gap: 2rem;
+  padding-top: 5rem;
+}
+.qulity {
+  background: #bcccdc;
+  padding: 4rem 0;
+  width: 30%;
+  box-shadow: 0 5px 25px rgba(1, 20, 1, 15%);
+  border-radius: 10px;
+}
+.qulity:hover {
+  transform: scale(1.1);
+  transition: 0.7s ease;
+}
+.qulity p {
+  text-align:center;
+  width: 70%;
+  margin: 1rem auto;
+}
+.qulity h3{
+ color: black;
+ font-size: 2.2rem;
+ margin-bottom: 0; /* IDEA: so that it will be on the same line with the icon */
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header i {
+  font-size: 2.2rem;
+  margin-right: 1rem;
+  color: #27ab83;
+}
+.about-us-container {
+  background-color:#334e68;
+}
+.about-us {
+  width: 90%;
+  max-width: 1366px;
+  margin: 0 auto;
+  height: 50vh;
+  display: flex;
+  justify-content: space-between;
+}
+.about-us-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about-us-content h2{
+color: #f0f4f8;
+font-size: 3rem;
+margin-bottom: 1rem;
+}
+.about-us-content p{
+  color: #d5d5d5;
+  margin-top: 1rem;
+  width: 80%;
+}
+.about-us img {
+  width: 100%;
+  height: 100%;
+}
+.contact-us {
+  width: 90%;
+  max-width: 1366px;
+  margin: 3rem auto;
+  height: 100%;
+  padding: 2rem 0;
+  text-align: center;
+}
+.contact-us h2 {
+  font-size: 3rem;
+}
+label, input, textarea {
+  font-family: inherit;
+  font-size: 1.6rem;
+  margin-bottom:1.5rem;
+  margin-top: 1rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 0;
+  width: 100%;
+}
+form .btn {
+  width: 100px;
+  align-self: center;
+  margin-top: 1rem;
+}
+input, textarea {
+  width: 80%;
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  padding: 0.75rem 2rem;
+  margin: 0 auto; /* IDEA: when using width.. margin: auto :can make it center */
+}
+footer {
+  background-color: #243b53;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+footer p {
+  color: #d5d5d5;
+}
+
+
+/* animations: i give the animation a name and then call it by its name (heroBg) in the needed place */
+@keyframes heroBg {
+  from {
+    scale:1.2; /* IDEA: 1.2 : bigger than its original size */
+  }
+  to {
+      scale:1; /* IDEA: 1: equal to its original size*/
+  }
+}
+@media (max-width:1300px) {
+ .hero-container .content {
+   align-items: center;
+   text-align: center;
+ }
+}
+@media (max-width:1100px) {
+  nav ul {
+    flex-flow: column;
+  }
+  nav ul li {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width:900px) {
+.qulities-container {
+  flex-wrap: wrap;
+}
+.qulity {
+  width: 100%;
+}
+.hero-container::after {
+  animation: none;
+}
+}
+@media (max-width:766px){
+ .about-us img {
+   display: none;
+ }
+ .about-us-content {
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+ }
+ footer p{
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+ }
+ .content h1{
+   font-size: 3.5rem;
+ }
+ .content h3{
+   font-size: 2rem;
+ }
+}
